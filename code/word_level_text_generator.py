@@ -7,7 +7,7 @@ from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.utils import np_utils
 # load ascii text and covert to lowercase
-filename = './data/wonderland.txt'
+filename = '/Workspace-Github/text_generator_keras/data/wonderland.txt'
 raw_text = open(filename).read().lower()
 # create mapping of unique chars to integers, and a reverse mapping
 tokens = sorted(list(set(nltk.word_tokenize(raw_text))))
