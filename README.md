@@ -15,13 +15,13 @@ When I learnt text analytics in SMU. I've always thought about how to implement 
 ## Result
 
 1. Character-level example
-Seed:  the queen in a voice of thunder, and people began running about in all directions, tumbling up agai
-result: ns the woudd her hend and aroid and the tar ao inr faad sha was toe tineg ana toond at the wonde se
+*Seed:  the queen in a voice of thunder, and people began running about in all directions, tumbling up agai </br>
+*result: ns the woudd her hend and aroid and the tar ao inr faad sha was toe tineg ana toond at the wonde se
 Done.
 
 2. Word-level example
-Seed: quite relieved to see it trot away quietly into the wood . 'if it had grown up , ' she said to herself , 'it would have made a dreadfully
-result: , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king 
+*Seed: quite relieved to see it trot away quietly into the wood . 'if it had grown up , ' she said to herself , 'it would have made a dreadfully </br>
+*result: , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king 
 Done.
 
 ## Analyse
