@@ -52,6 +52,7 @@ print(len(dataX))
 start = numpy.random.randint(0, len(dataX)-1)
 pattern = dataX[start]
 print('Seed:', ' '.join([int_to_word[value] for value in pattern]))
+sys.stdout.write('result: ')
 # generate characters
 for i in range(200):
     x = numpy.reshape(pattern, (1, len(pattern), 1))
