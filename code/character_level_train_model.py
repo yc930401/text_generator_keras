@@ -7,7 +7,11 @@ from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 # load text and covert to lowercase
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 filename = './data/wonderland.txt'
+=======
+filename = '/home/ec2-user/text_generator_keras/data/wonderland.txt'
+>>>>>>> Stashed changes
 =======
 filename = '/home/ec2-user/text_generator_keras/data/wonderland.txt'
 >>>>>>> Stashed changes
