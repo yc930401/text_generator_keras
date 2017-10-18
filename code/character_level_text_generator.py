@@ -6,7 +6,7 @@ from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.utils import np_utils
 # load ascii text and covert to lowercase
-filename = '/data/wonderland.txt'
+filename = './data/wonderland.txt'
 raw_text = open(filename).read().lower()
 # create mapping of unique chars to integers, and a reverse mapping
 chars = sorted(list(set(raw_text)))

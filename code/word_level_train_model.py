@@ -7,7 +7,7 @@ from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 # load text and covert to lowercase
-filename = '/data/wonderland.txt'
+filename = './data/wonderland.txt'
 raw_text = open(filename).read().lower()
 # create mapping of unique chars to integers
 tokens = sorted(list(set(nltk.word_tokenize(raw_text))))
