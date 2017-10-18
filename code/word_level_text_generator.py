@@ -38,21 +38,20 @@ x = x / float(n_vocab)
 y = np_utils.to_categorical(dataY)
 # define the LSTM model
 model = Sequential()
-model.add(LSTM(512, input_shape=(x.shape[1], x.shape[2])))
+model.add(LSTM(512, input_shape=(x.shape[1], x.shape[2]), return_sequences=True))
 model.add(Dropout(0.2))
 model.add(LSTM(512, return_sequences=False))
 model.add(Dropout(0.2))
-model.add(Dense(len(words)), activation='softmax')
+model.add(Dense(y.shape[1], activation='softmax'))
 # load the network weights
-filename = 'weights-improvement-19-2.7338.hdf5' #####change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+filename = '/Workspace-Github/text_generator_keras/data/weight_word/weights-improvement-19-5.4753.hdf5' 
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 # pick a random seed
 print(len(dataX))
 start = numpy.random.randint(0, len(dataX)-1)
 pattern = dataX[start]
-print('Seed:')
-print('\"', ''.join([int_to_word[value] for value in pattern]), '\"')
+print('Seed:', ' '.join([int_to_word[value] for value in pattern]))
 # generate characters
 for i in range(200):
     x = numpy.reshape(pattern, (1, len(pattern), 1))
@@ -61,7 +60,7 @@ for i in range(200):
     index = numpy.argmax(prediction)
     result = int_to_word[index]
     seq_in = [int_to_word[value] for value in pattern]
-    sys.stdout.write(result)
+    sys.stdout.write(result+' ')
     pattern.append(index)
     pattern = pattern[1:len(pattern)]
 print('\nDone.')

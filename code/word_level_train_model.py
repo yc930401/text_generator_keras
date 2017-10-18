@@ -7,7 +7,7 @@ from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 # load text and covert to lowercase
-filename = '/home/ec2-user/text_generator_keras/data/wonderland.txt'
+filename = '/Workspace-Github/text_generator_keras/data/wonderland.txt'
 raw_text = open(filename).read().lower()
 # create mapping of unique chars to integers
 tokens = sorted(list(set(nltk.word_tokenize(raw_text))))
@@ -25,7 +25,7 @@ dataY = []
 for i in range(0, n_words - seq_length, 1):
     seq_in = words[i:i + seq_length]
     seq_out = words[i + seq_length]
-    dataX.append([word_to_int[char] for char in seq_in])
+    dataX.append([word_to_int[word] for word in seq_in])
     dataY.append(word_to_int[seq_out])
 n_patterns = len(dataX)
 print('Total Patterns: ', n_patterns)
@@ -44,7 +44,7 @@ model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 # define the checkpoint
-filepath = 'weights-improvement-{epoch:02d}-{loss:.4f}.hdf5'
+filepath = '/Workspace-Github/text_generator_keras/data/weight_word/weights-improvement-{epoch:02d}-{loss:.4f}.hdf5'
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 callbacks_list = [checkpoint]
 # fit the model
