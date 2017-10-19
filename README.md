@@ -1,5 +1,5 @@
 # text_generator_keras
-text generators using LSTM with kears
+text generators using LSTM with keras
 
 ## Introduction
 
