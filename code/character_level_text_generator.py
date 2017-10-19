@@ -36,7 +36,9 @@ X = X / float(n_vocab)
 y = np_utils.to_categorical(dataY)
 # define the LSTM model
 model = Sequential()
-model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2])))
+model.add(LSTM(512, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
+model.add(Dropout(0.2))
+model.add(LSTM(512))
 model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 # load the network weights
@@ -50,7 +52,7 @@ pattern = dataX[start]
 print('Seed:', ''.join([int_to_char[value] for value in pattern]))
 sys.stdout.write('result: ')
 # generate characters
-for i in range(100):
+for i in range(1000):
     x = numpy.reshape(pattern, (1, len(pattern), 1))
     x = x / float(n_vocab)
     prediction = model.predict(x, verbose=0)
