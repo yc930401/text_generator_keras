@@ -11,6 +11,7 @@ When I learnt text analytics, I've always thought about how to implement a text 
 2. Build LSTM models.
 3. Train the models using Tesla P100-SXM2 gpu (character-level text generator takes about 3 to 4 hours, and word level takes about 1 hour).
 4. Use the best models to generate text given random seed.
+* Here I only upload the best model, because the files are too large. 100 models for word-level and 30 models for character-level.
 
 ## Result
 
