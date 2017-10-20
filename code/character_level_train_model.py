@@ -37,10 +37,16 @@ y = np_utils.to_categorical(dataY)
 # define the LSTM model
 model = Sequential()
 model.add(LSTM(512, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
+print('LSTM1 input: ', model.input_shape)
+print('LSTM1 output: ', model.output_shape)
 model.add(Dropout(0.2))
+print('Dropout1 output: ', model.output_shape)
 model.add(LSTM(512))
+print('LSTM2 output: ', model.output_shape)
 model.add(Dropout(0.2))
+print('Dropout2 output: ', model.output_shape)
 model.add(Dense(y.shape[1], activation='softmax'))
+print('Dense output: ', model.output_shape)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 # define the checkpoint
 filepath = '/Workspace-Github/text_generator_keras/data/weight_char/weights-improvement-{epoch:02d}-{loss:.4f}.hdf5'
