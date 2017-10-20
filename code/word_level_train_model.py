@@ -48,4 +48,4 @@ filepath = '/Workspace-Github/text_generator_keras/data/weight_word/weights-impr
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 callbacks_list = [checkpoint]
 # fit the model
-model.fit(x, y, epochs=60, batch_size=128, callbacks=callbacks_list)
+model.fit(x, y, epochs=100, batch_size=128, callbacks=callbacks_list)
