@@ -44,7 +44,7 @@ model.add(LSTM(512, return_sequences=False))
 model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 # load the network weights
-filename = '/Workspace-Github/text_generator_keras/data/weight_word/weights-improvement-19-5.4753.hdf5' 
+filename = '/Workspace-Github/text_generator_keras/data/weight_word/weights-improvement-99-2.1040.hdf5' 
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 # pick a random seed
