@@ -3,25 +3,26 @@ text generators using LSTM with keras
 
 ## Introduction
 
-When I learnt text analytics in SMU. I've always thought about how to implement a text generator using deep learning method. So in this project. I built two text generators using LSTM, one is world-level and the other is character-level. At first, I thought word-level text generator should outperform character-level text generator. Because the outputs are at least words, while using character-level text generator, the output may not be valid english words. But see the results below.
+When I learnt text analytics, I've always thought about how to implement a text generator using deep learning method. So in this project. I built two text generators using LSTM, one is world-level and the other is character-level. At first, I thought word-level text generator should outperform character-level text generator. Because the outputs are at least words, while using character-level text generator, the output may not be valid english words. But the result of character-level text generator is quit good.
 
 ## Methodology
 
 1. Prepare training data sequnces.
 2. Build LSTM models.
-3. Train the models using Amazon AWS EC2. (It takes about 2 and a half hours to run the two models)
-4. Use the best models to generate text.
+3. Train the models using Tesla P100-SXM2 gpu (character-level text generator takes about 3 to 4 hours, and word level takes about 1 hour).
+4. Use the best models to generate text given random seed.
 
 ## Result
 
 1. Character-level example </br>
-* Seed:  the queen in a voice of thunder, and people began running about in all directions, tumbling up agai </br>
-* result: ns the woudd her hend and aroid and the tar ao inr faad sha was toe tineg ana toond at the wonde se
+* Seed: n!' for the mouse was swimming
+away from her as hard as it could go, and making quite a commotion in
+* Result:  the way of execution the window, and said in a vhile to stenble the toot. alice cid not like the look of the court, and said to the kury as he spoke, and she was quite surprised to be then they lake out that the was now that they were littening about in the mittle golden key and she was qoeaking about it out of the wood, and the poor little thing sabbit hoterrupted to see what she was now about the courte, and the whole party sereat of the courte, and said to the kury and the cook and the moment all the while, and looking at the moment she was now that they were nying down and looked at the was jo the words: 'when the mock turtle shgned to be a long tide of the lobk turtle, and said to the knry, and the queen said so the went on, 'what a curious pincering in the ban!' and she wanted uith tome time and stiekly and ttoping the soom. and the white rabbit read out of the wasted on the blok, and the white rabbit read out of the wasted on the blok, and the white rabbit read out of the wast
 Done.
 
 2. Word-level example </br>
-* Seed: quite relieved to see it trot away quietly into the wood . 'if it had grown up , ' she said to herself , 'it would have made a dreadfully </br>
-* result: , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king , ' said the king 
+* Seed: when they saw alice coming . 'there 's plenty of room ! ' said alice indignantly , and she sat down in a large arm-chair at one end of the
+* Result: back . the time ? ' 'i quite have the see ? ' the the king , with to alice again as looking , the was 's great out . an all the rabbit her the end a a in is her to away in as in time , 'i must next to , ' alice said to herself , who had been into out this the bottle out , but it -- him as round . when the . ) queer for , bit then had all moment in two , he looked . and if tried , , 'what it all ! ' , the 's ' the gryphon went after the 's with way . to first thing his . who up nothing by upon were other when , . the not had thing to be them , for last him , all when was arm her thought about with she other side eyes the out out a how , she there , ) why enough the off of into out , and . * was came was much its , ' alice eat know mean up . '' she he the herself , 'it 'm sure 
 Done.
 
 ## Analyse
