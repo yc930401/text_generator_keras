@@ -8,7 +8,7 @@ When I learnt text analytics, I've always thought about how to implement a text 
 ## Methodology
 
 1. Prepare training data sequnces.
-2. Build LSTM models.
+2. Build 2 layer LSTM models. (Note: the return_sequence in the first lstm layer should be set to True. See the reason in the last reference link.)
 3. Train the models using Tesla P100-SXM2 gpu (character-level text generator takes about 3 to 4 hours, and word level takes about 1 hour).
 4. Use the best models to generate text given random seed.
 * Here I only upload the best model, because the files are too large. 100 models for word-level and 30 models for character-level.
@@ -28,12 +28,20 @@ Done.
 
 ## Analyse
 
-The result above shows that character-level text generator performs better than word-level text generator. The same words appears again and again in word-level generator output. The reason may be the limited size of the word vocabulary compared to character-level generator, and the limit of epochs. When I train a character-level text generator with a small dataset, I got similar result as weor-level text generator. One paper in the reference said：</br>
+The result above shows that character-level text generator performs better than word-level text generator. The quantitative result can be measured by perplexity score. which is e to the power of loss. The loss of the two models are 1.0522 for character-level (the minimum loss with epoch = 16) and 2.1040 for word-level(the minimum loss with epoch = 99). This measurement is mentioned in the tensorflow tutorial - Recurrent Neural Networks. 
+One paper in the reference said：</br>
 > Word-RNNs are trained on word-level representations and thus are quite effective at capturing semantic meaning. Char-RNNs are trained on character-level representations and thus potentially contain more information about morphemes and–more relevantly for our purposes–rhyming and meter. </br>
+
+## Future work
+
+1. Try to use word embedding (e.g. embedding layer in keras) instead of map each char to a int index.
+2. Combine character-level and word-level text generator to get a better model.
 
 ## References
 https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/ </br>
 https://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/ </br>
 https://linuxacademy.com/howtoguides/posts/show/topic/17385-use-putty-to-access-ec2-linux-instances-via-ssh-from-windows </br>
 https://blog.paperspace.com/recurrent-neural-networks-part-1-2/ </br>
-https://github.com/vlraik/word-level-rnn-keras/blob/master/lstm_text_generation.py
+https://github.com/vlraik/word-level-rnn-keras/blob/master/lstm_text_generation.py </br>
+https://www.tensorflow.org/tutorials/recurrent </br>
+https://stackoverflow.com/questions/42755820/how-to-use-return-sequences-option-and-timedistributed-layer-in-keras
