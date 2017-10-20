@@ -30,7 +30,6 @@ Done.
 
 The result above shows that character-level text generator performs better than word-level text generator. The same words appears again and again in word-level generator output. The reason may be the limited size of the word vocabulary compared to character-level generator, and the limit of epochs. When I train a character-level text generator with a small dataset, I got similar result as weor-level text generator. One paper in the reference said：</br>
 > Word-RNNs are trained on word-level representations and thus are quite effective at capturing semantic meaning. Char-RNNs are trained on character-level representations and thus potentially contain more information about morphemes and–more relevantly for our purposes–rhyming and meter. </br>
-If I have time later. I'll try to train the models using a much larger dataset and build a text generator that combines the two.
 
 ## References
 https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/ </br>
