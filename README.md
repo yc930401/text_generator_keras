@@ -30,6 +30,7 @@ Done.
 ## Analyse
 
 The result above shows that character-level text generator performs better than word-level text generator. The quantitative result can be measured by perplexity score. which is e to the power of loss. The loss of the two models are 1.0522 for character-level (the minimum loss with epoch = 16) and 2.1040 for word-level(the minimum loss with epoch = 99). This measurement is mentioned in the tensorflow tutorial - Recurrent Neural Networks. 
+The word-level text generator is a very naive model, because I do not consider sentence level but only the single word, and I do not perform vectorization to transform a word integer to a one-hot vector.  
 One paper in the reference said：</br>
 > Word-RNNs are trained on word-level representations and thus are quite effective at capturing semantic meaning. Char-RNNs are trained on character-level representations and thus potentially contain more information about morphemes and–more relevantly for our purposes–rhyming and meter. </br>
 
